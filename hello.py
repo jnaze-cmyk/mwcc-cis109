@@ -1,1 +1,3 @@
-print("Hello World!")
+condition = True 
+result = condition / 1
+print(result)
