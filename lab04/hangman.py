@@ -108,8 +108,13 @@ while(len(bad_guesses) <=max_wrong and "_" in board):
         bad_guesses.append(guess)
         print(f"\n '{guess}'")
 
+    
+
     if len(bad_guesses) == 6:
         print("You Lose!")
         print("The word was:" , word)
         break
 
+if "_" not in word:
+    print(f"🏆 You win! You guessed the word! The word was {word}!")
+    
