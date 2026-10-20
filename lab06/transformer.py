@@ -20,19 +20,20 @@ def filter_short(text, min_length):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", "--action" , help="transformer action [count | lower | upper] " )
-    parser.add_argument("-t", "--text" , help="text to transform" )
+    parser.add_argument("-d", "--data" , help="data to transform" )
     args = parser.parse_args()
 
     if args.action:
         print(f"Action: {args.action}")
 
-
-
-    if args.text:
-        print(f"text: {args.text}")
+    if args.data:
+        print(f"data: {args.data}")
 
     match args.action:
         case "count":
-            print(f"Word Count: {get_word_count(args.text)}")
-
+            print(f"Word Count: {get_word_count(args.data)}")
+        case "lower":
+            print(f"Text Lowercase: {transform_lower(args.data)}")
+        case "upper":
+            print(f"Text Uppercase: {transform_lower(args.data)}")
 main()
