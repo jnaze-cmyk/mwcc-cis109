@@ -1,21 +1,23 @@
 import argparse
 
-def transform_upper(text):
-    uppercase = text.upper()
-    print(uppercase)
+def transform_upper(data):
+    text_uppercase = data.upper()
+    return text_uppercase
 
-def transform_lower(text):
-    lowercase = text.lower()
-    print(lowercase)
+def transform_lower(data):
+    text_lowercase = data.lower()
+    return text_lowercase
 
-def get_word_count(text):
-    toks = text.split(",")
+def get_word_count(data):
+    toks = data.split(",")
     return len(toks)
 
-def filter_short(text, min_length):
+def filter_short(data, min_length):
     min_length = 3
-    if len(text) >= min_length:
-        print(text)
+    if len(data) >= min_length:
+        print(data)
+    else:
+        print("None")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -35,5 +37,10 @@ def main():
         case "lower":
             print(f"Text Lowercase: {transform_lower(args.data)}")
         case "upper":
-            print(f"Text Uppercase: {transform_lower(args.data)}")
+            print(f"Text Uppercase: {transform_upper(args.data)}")
 main()
+'''
+
+if __name__ == "__main__":
+    main()
+'''
